@@ -1,0 +1,431 @@
+/* ------------------------------------- ! ----  COLOR PALETTE  ---- ! ----------------------------------- */
+/*bg: #FFEAEA
+ticket:#F5AFC7
+#6C53BD
+
+<a href="https://www.flaticon.com/free-icons/star" 
+title="star icons">Star icons created by Freepik - Flaticon</a>
+ */
+
+/* ---------------------------------- ! ----  SCREEN ADJUSTMENT  ---- ! ---------------------------------- */
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
+
+
+/* --------------------------------------- ! ----  FONT  ---- ! ----------------------------------------- */
+
+
+@font-face {
+  font-family: '1';
+  src: url('Chatlong.ttf') format('truetype'), /* Replace 'path/to/fontfile.ttf' with the actual path */
+       
+}
+@font-face {
+  font-family: '2';
+  src: url('name.ttf') format('truetype'), /* Replace 'path/to/fontfile.ttf' with the actual path */
+       
+}
+
+/* --------------------------------------- ! ----  SLIDER  ---- ! ------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+body {
+  display: flex;
+  padding: 0 35px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color:#FFEAEA;
+}
+
+.wrapper {
+  max-width: 2000px;
+  width: 100%;
+  position: relative;
+  background-color: #FFEAEA;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+}
+.wrapper i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-child{
+  left: -10px;
+  z-index: 5;
+}
+.wrapper i:last-child{
+  right: -10px;
+  z-index: 5;
+}
+.wrapper .carousel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 1.13) - 40px );
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  margin-left: -40px; /* Negative margin on left side */
+  margin-right: -40px;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  height:900px;
+  list-style: none;
+  background: FFEAEA;
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+
+
+/* --------------------------------------- ! ----  CARDS ---- ! ------------------------------------ */
+
+
+
+.slider-area {
+  height: 100%;
+  width:90%;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center horizontally */
+  position: relative;
+  background-color: #FFEAEA;
+}
+
+.shadow{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:8.8%;
+  left:4%; 
+  z-index: 1;
+}
+.shadow img {
+  width: 95%;
+  height: 95%;
+  object-fit: fill;
+  opacity: 1; /* Adjust the opacity of the shadow */
+}
+.ridges{
+  position: relative;
+  background-color: transparent;
+  width: 100%; /* Adjust the width as needed */
+  height: 96%; /* Adjust the height as needed */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index:2;
+}
+.left-ridges{
+  width: 1.75%; /* Adjust the width as needed */
+  height: 75%; 
+  background-color: transparent;
+  background-size: 30px 30px;
+  background-repeat: repeat-y;
+
+
+}
+.right-ridges{
+  width: 1.8%; /* Adjust the width as needed */
+  height: 75%;
+  background-color: transparent;
+  background-size: 30px 30px;
+  background-repeat: repeat-y;
+  background-image: 
+  linear-gradient(-45deg, transparent 75%, #F5AFC7 75%), 
+  linear-gradient(-135deg, transparent 75%, #F5AFC7 75%); 
+
+}
+ 
+  
+
+.ticket {
+  width: 93%; /* Adjust the width as needed */
+  height: 100%; /* Adjust the height as needed */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  
+  
+}
+
+
+
+
+.border-ticket{
+  width: 80%; /* Adjust the width as needed */
+  height: 80%; /* Adjust the height as needed */
+  border-width: 10px 13px 10px 13px; /* top right bottom left */
+  /* border style *//* Adjust border thickness and color */
+  border-radius: 50px; /* Adjust border radius */
+  background-color: transparent;
+  display: flex;
+  
+}
+
+.logo{
+  width:33%;
+  height:100%;
+  
+}
+.line{
+  margin-top:5% ;
+  margin-bottom:5%;
+  width:0.8%;
+  height:80%;
+  background-color: #6C53BD;
+}
+.name-navbar{
+  width:75%;
+  height:100%;
+  color: #6C53BD;
+  
+}
+.name{
+  width:100%;
+  height:50%;
+  margin-top:19%;
+  font-size: 120px;
+  font-family: '2', sans-serif;
+  text-align: center;
+  color: #6C53BD;
+}
+.name p {
+  margin: 0; /* Set margin to 0 */
+}
+
+
+.navbar{
+  display: flex;
+  width:100%;
+  height:30%;
+  font-family: '1', sans-serif;
+  font-size: 37px;
+  
+}
+.navbar a{
+  margin-left:6%;
+  margin-top:2.5%;
+  text-decoration: none; /* Remove underline */
+  color: #6C53BD; /* Change color to red, adjust as needed */
+}
+
+.navbar a:hover{
+  color: #D8658E; /* Font color change on hover */
+  text-decoration: underline; /* Underline text on hover */
+  text-underline-position: under; /* Ensures the underline appears under the text */
+    padding-bottom: 20px; 
+}
+
+.stars {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top:11%;
+  margin-bottom:11%;
+
+}
+
+.stars img {
+  width:auto;
+  height: 40px;
+  margin: 35px; /* Adjust the margin as needed */
+}
+.logo-image {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin:0%;
+}
+.logo-image img{
+  height:auto;
+  width:78%;
+}
+.ticket[name="about"]{
+  background:
+  radial-gradient(circle at 0 100%, rgba(204,0,0,0) 90px, #AFD1F5 15px),
+  radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 90px, #AFD1F5 15px),
+  radial-gradient(circle at 100% 0, rgba(204,0,0,0) 90px, #AFD1F5 15px),
+  radial-gradient(circle at 0 0, rgba(204,0,0,0) 90px, #AFD1F5 15px);
+  background-position: bottom left, bottom right, top right, top left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.ticket[name="contact"]{
+  background:
+  radial-gradient(circle at 0 100%, rgba(204,0,0,0) 90px, #BB9DE6 15px),
+  radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 90px, #BB9DE6 15px),
+  radial-gradient(circle at 100% 0, rgba(204,0,0,0) 90px, #BB9DE6 15px),
+  radial-gradient(circle at 0 0, rgba(204,0,0,0) 90px, #BB9DE6 15px);
+  background-position: bottom left, bottom right, top right, top left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+.ticket[name="projects"]{
+  background:
+  radial-gradient(circle at 0 100%, rgba(204,0,0,0) 90px, #F6D0BF 15px),
+  radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 90px, #F6D0BF 15px),
+  radial-gradient(circle at 100% 0, rgba(204,0,0,0) 90px, #F6D0BF 15px),
+  radial-gradient(circle at 0 0, rgba(204,0,0,0) 90px, #F6D0BF 15px);
+  background-position: bottom left, bottom right, top right, top left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+.ticket[name="skill"]{
+  background:
+  radial-gradient(circle at 0 100%, rgba(204,0,0,0) 90px, #C5DBD5 15px),
+  radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 90px, #C5DBD5 15px),
+  radial-gradient(circle at 100% 0, rgba(204,0,0,0) 90px, #C5DBD5 15px),
+  radial-gradient(circle at 0 0, rgba(204,0,0,0) 90px, #C5DBD5 15px);
+  background-position: bottom left, bottom right, top right, top left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+.ticket[name="homepage"]{
+  background:
+  radial-gradient(circle at 0 100%, rgba(204,0,0,0) 90px, #F5AFC7 15px),
+  radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 90px, #F5AFC7 15px),
+  radial-gradient(circle at 100% 0, rgba(204,0,0,0) 90px, #F5AFC7 15px),
+  radial-gradient(circle at 0 0, rgba(204,0,0,0) 90px, #F5AFC7 15px);
+  background-position: bottom left, bottom right, top right, top left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.border-ticket[name="contact"]{
+  background-color: #BB9DE6;
+  border-style: solid;
+  border-color: #F4D548; 
+}
+ 
+.border-ticket[name="about"]{
+  background-color: #AFD1F5;
+  border-style: solid;
+  border-color: #4EAF95; 
+}
+
+.border-ticket[name="skill"]{
+  background-color: #C5DBD5;
+  border-style: solid;
+  border-color: #6590D8; 
+}
+.border-ticket[name="projects"]{
+  background-color: #F6D0BF;
+  border-style: solid;
+  border-color: #D8658E; 
+}
+.border-ticket[name="homepage"]{
+  background-color: #F5AFC7;
+  border-style: solid;
+  border-color: #6C53BD; 
+}
+.left-ridges[name="homepage"]{
+  background-image: 
+linear-gradient(45deg, transparent 75%, #F5AFC7 75%), 
+linear-gradient(135deg, transparent 75%, #F5AFC7 75%); 
+}
+.right-ridges[name="homepage"]{
+  background-image: 
+linear-gradient(-45deg, transparent 75%, #F5AFC7 75%), 
+linear-gradient(-135deg, transparent 75%, #F5AFC7 75%); 
+}
+
+.left-ridges[name="about"]{
+  background-image: 
+linear-gradient(45deg, transparent 75%, #AFD1F5 75%), 
+linear-gradient(135deg, transparent 75%, #AFD1F5 75%); 
+}
+.right-ridges[name="about"]{
+  background-image: 
+linear-gradient(-45deg, transparent 75%, #AFD1F5 75%), 
+linear-gradient(-135deg, transparent 75%, #AFD1F5 75%); 
+}
+
+.left-ridges[name="skill"]{
+  background-image: 
+linear-gradient(45deg, transparent 75%, #C5DBD5 75%), 
+linear-gradient(135deg, transparent 75%, #C5DBD5 75%); 
+}
+.right-ridges[name="skill"]{
+  background-image: 
+linear-gradient(-45deg, transparent 75%, #C5DBD5 75%), 
+linear-gradient(-135deg, transparent 75%, #C5DBD5 75%); 
+}
+
+.left-ridges[name="projects"]{
+  background-image: 
+linear-gradient(45deg, transparent 75%, #F6D0BF 75%), 
+linear-gradient(135deg, transparent 75%, #F6D0BF 75%); 
+}
+.right-ridges[name="projects"]{
+  background-image: 
+linear-gradient(-45deg, transparent 75%,  #F6D0BF 75%), 
+linear-gradient(-135deg, transparent 75%, #F6D0BF 75%); 
+}
+
+.left-ridges[name="contact"]{
+  background-image: 
+linear-gradient(45deg, transparent 75%, #BB9DE6 75%), 
+linear-gradient(135deg, transparent 75%, #BB9DE6 75%); 
+}
+.right-ridges[name="contact"]{
+  background-image: 
+linear-gradient(-45deg, transparent 75%, #BB9DE6 75%), 
+linear-gradient(-135deg, transparent 75%, #BB9DE6 75%); 
+}
+
